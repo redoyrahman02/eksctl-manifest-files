@@ -1,0 +1,16 @@
+# An example of ClusterConfig object with access to CSI drivers:
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: demo-cluster
+  region: ap-south-1
+
+nodeGroups:
+  - name: ng-1
+    spot: true    
+    instanceType: t3.small
+    iam:
+      withAddonPolicies:
+        ebs: true
